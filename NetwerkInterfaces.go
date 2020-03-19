@@ -18,11 +18,9 @@ func main() {
 			addrStr := addr.String()
 			fmt.Println("    Network Adres: ", addr.Network(), addrStr)
 
-			// Must drop the stuff after the slash in order to convert it to an IP instance
 			split := strings.Split(addrStr, "/")
 			networkadres := split[0]
 
-			// Parse the string to an IP instance
 			ip := net.ParseIP(networkadres)
 			if ip.To4() != nil {
 				fmt.Println("       ", networkadres, "is a ipv4 adres.")
